@@ -1,0 +1,1 @@
+[{"uid":"64a1983559ede9b1","name":"/pet/findByStatus","time":{"start":1660931553744,"stop":1660931555074,"duration":1330},"status":"failed","severity":"normal"},{"uid":"be1abcf8c28bb238","name":"/store/inventory","time":{"start":1660931560764,"stop":1660931561779,"duration":1015},"status":"passed","severity":"normal"}]

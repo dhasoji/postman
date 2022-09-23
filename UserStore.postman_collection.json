@@ -1,0 +1,40 @@
+{
+	"variables": [],
+	"info": {
+		"name": "UserStore",
+		"_postman_id": "ab916484-27f2-0d4d-40cd-aa42cad7ada0",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/store/inventory",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://petstore.swagger.io/v2/store/inventory",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "https://petstore.swagger.io/v2/pet/findByStatus?status=available\r\n"
+			},
+			"response": []
+		}
+	]
+}

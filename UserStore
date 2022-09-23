@@ -1,0 +1,74 @@
+{
+	"variables": [],
+	"info": {
+		"name": "UserStore",
+		"_postman_id": "ab916484-27f2-0d4d-40cd-aa42cad7ada0",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/pet/findByStatus",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"tests[\"Status code name has string\"] = responseCode.name.has(\"Created\");",
+							"",
+							"tests[\"Successful POST request\"] = responseCode.code === 201 || responseCode.code === 202;",
+							"",
+							"var schema = {",
+							" \"items\": {",
+							" \"type\": \"boolean\"",
+							" }",
+							"};",
+							"var data1 = [true, false];",
+							"var data2 = [true, 123];",
+							"",
+							"tests[\"Valid Data1\"] = tv4.validate(data1, schema);",
+							"tests[\"Valid Data2\"] = tv4.validate(data2, schema);",
+							"console.log(\"Validation failed: \", tv4.error);"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/pet/findByStatus?status=available",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"pet",
+						"findByStatus"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "available\n",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": "https://petstore.swagger.io/v2/pet/findByStatus?status=available\r\n"
+			},
+			"response": []
+		}
+	]
+}

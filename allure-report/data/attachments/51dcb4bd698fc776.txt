@@ -1,0 +1,17 @@
+tests["Status code is 200"] = responseCode.code === 200;
+
+tests["Status code name has string"] = responseCode.name.has("Created");
+
+tests["Successful POST request"] = responseCode.code === 201 || responseCode.code === 202;
+
+var schema = {
+ "items": {
+ "type": "boolean"
+ }
+};
+var data1 = [true, false];
+var data2 = [true, 123];
+
+tests["Valid Data1"] = tv4.validate(data1, schema);
+tests["Valid Data2"] = tv4.validate(data2, schema);
+console.log("Validation failed: ", tv4.error);
